@@ -489,7 +489,7 @@ a:focus {
     justify-content: center;
     list-style-type: none;
     margin: 20px 0 20px 0;
-    align-items: baseline
+    align-items: baseline;
 }
 
 .food_section .filters_menu li {
