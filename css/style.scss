@@ -43,7 +43,6 @@ body {
 }
 
 
-
 .layout_padding2 {
   padding: 75px 0;
 }
@@ -55,7 +54,6 @@ body {
 .layout_padding2-bottom {
   padding-bottom: 75px;
 }
-
 
 
 .layout_padding-bottom {
@@ -404,7 +402,7 @@ a:focus {
       height: 175px;
       margin-right: 15px;
       position: relative;
-      transition: all .1.5s;
+      transition: all .1 .5s;
       border-radius: 100%;
       border: 5px solid $primary1;
       overflow: hidden;
@@ -433,7 +431,8 @@ a:focus {
         }
       }
 
-      p {}
+      p {
+      }
 
       a {
         @include hero_btn($primary1, $white, 10px, 30px, 45px);
@@ -885,7 +884,6 @@ a:focus {
       }
     }
   }
-
 
 
   .footer-info {
