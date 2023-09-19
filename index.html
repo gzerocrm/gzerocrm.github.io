@@ -15,7 +15,6 @@
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"/>
-
     <!-- responsive style -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -31,19 +30,17 @@
                 </button>
             </div>
             <label class="text-light text-center">Booking start time</label>
-            <div class="d-block justify-content-center">
-                <label for="date"></label><input id="date" type="date" class="form-control"
-                                                 style="display:inline;width: 60%">
-                <select class="form-control" style="width: 35%;display:inline">
-                    <script>
-                        for (let i = 1; i <= 23; i++) {
-                            const option = document.createElement("option");
-                            option.value = i;
-                            option.textContent = `${i}:00`;
-                            document.querySelector("select").appendChild(option);
-                        }
-                    </script>
-                </select></div>
+                <input id="date" type="datetime-local" class="form-control" style="display:inline;width: 100%;height: 50px">
+                <!--                <select class="form-control" style="width: 35%;display:inline">-->
+                <!--                    <script>-->
+                <!--                        for (let i = 1; i <= 23; i++) {-->
+                <!--                            const option = document.createElement("option");-->
+                <!--                            option.value = i;-->
+                <!--                            option.textContent = `${i}:00`;-->
+                <!--                            document.querySelector("select").appendChild(option);-->
+                <!--                        }-->
+                <!--                    </script>-->
+                <!--                </select>-->
             <label class="mt-5 text-center text-light">Booking hours</label>
             <div class="d-flex justify-content-between ml-5 mr-5 mb-3">
                 <button class="btn" onclick="decrement()"
@@ -70,9 +67,9 @@
             <img decoding="async" loading="lazy" class="aligncenter wp-image-9854 size-full"
                  src="https://groundzero.uz/wp-content/uploads/2021/04/logo-footer.png" alt="" width="150">
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="justify-content-center">
             <ul class="filters_menu">
-                <li data-filter=".kitob">Kitoblar Olami</li>
+                <li data-filter=".kitob">Kitoblar</li>
                 <li data-filter=".minor">Minor</li>
                 <li data-filter=".sharq">Sharq</li>
             </ul>
