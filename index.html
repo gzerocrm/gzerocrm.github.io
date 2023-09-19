@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Basic -->
     <meta charset="utf-8"/>
@@ -8,27 +7,62 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Site Metas -->
-    <meta name="keywords" content=""/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
     <link rel="shortcut icon" href="images/favicon.png" type="">
     <title> Feane </title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-
     <!-- font awesome style -->
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
-
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"/>
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
+<body class="sub_page" style="background-image: url('rooms/image1.jpg');background-size: cover">
+<!--modal-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content p-2" style="background-color: #131618;opacity: 0.9">
+            <div class="modal-header" style="border: none">
+                <h6 id="room" style="color:white;font-size: 18px"></h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                                  style="color: white">&times;</span>
+                </button>
+            </div>
+            <label class="text-light text-center">Booking start time</label>
+            <div class="d-block justify-content-center">
+                <label for="date"></label><input id="date" type="date" class="form-control"
+                                                 style="display:inline;width: 60%">
+                <select class="form-control" style="width: 35%;display:inline">
+                    <script>
+                        for (let i = 1; i <= 23; i++) {
+                            const option = document.createElement("option");
+                            option.value = i;
+                            option.textContent = `${i}:00`;
+                            document.querySelector("select").appendChild(option);
+                        }
+                    </script>
+                </select></div>
+            <label class="mt-5 text-center text-light">Booking hours</label>
+            <div class="d-flex justify-content-between ml-5 mr-5 mb-3">
+                <button class="btn" onclick="decrement()"
+                        style="background-color: #F8FAFD;height: 50px;width: 50px;border-radius: 15px">-
+                </button>
+                <h5 style="margin:0;padding-left:2px;padding-right:2px;font-size:3rem;font-family:sans-serif;color:white"
+                    id="counter">1</h5>
+                <button class="btn" onclick="increment()"
+                        style="background-color: #F8FAFD;height: 50px;width: 50px;border-radius: 15px">+
+                </button>
+            </div>
+            <button class="btn btn-success" id='submit'
+                    style="height: 50px;font-size: 20px;text-align:center;vertical-align: middle">Submit
+            </button>
+        </div>
+    </div>
+</div>
+<!--modal end-->
 
-<body class="sub_page">
 <!-- main section -->
-
 <section class="food_section">
     <div class="container">
         <div class="heading_container heading_center mt-2">
@@ -37,214 +71,182 @@
         </div>
         <div class="d-flex justify-content-center">
             <ul class="filters_menu">
-                <li data-filter=".kitob">Kitoblar Olami</li>_
-                <li data-filter=".minor">Minor</li>_
+                <li data-filter=".kitob">Kitoblar Olami</li>
+                <li data-filter=".minor">Minor</li>
                 <li data-filter=".sharq">Sharq</li>
             </ul>
         </div>
         <div class="filters-content">
-            <div class="row grid">
-                <div class="col-xs-6 col-lg-4 all kitob">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/kitoblar_miting_6_100000.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 6 - Kitoblar<br><span
-                                        style="font-size: smaller">(for 6 persons)</span>
-                                    <br><strong>
-                                    100.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn1">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all kitob">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/kitoblar_miting_8_120000.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 8 - Kitoblar<br><span
-                                        style="font-size: smaller">(for 8 persons)</span>
-                                    <br><strong>
-                                    120.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn2">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all kitob">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/kitoblar_miting_10_140000.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 10 - Kitoblar<br><span
-                                        style="font-size: smaller">(for 10 persons)</span>
-                                    <br><strong>
-                                    100.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn3">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all kitob">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/kitoblar_miting_12_200000.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 12 - Kitoblar<br><span
-                                        style="font-size: smaller">(for 12 persons)</span>
-                                    <br><strong>
-                                    200.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn4">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all kitob">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/kitoblar_event.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Event room 12 - Kitoblar<br><span
-                                        style="font-size: smaller">(for 60 persons)</span>
-                                    <br><strong>
-                                    1.200.000 sum/2-hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn10">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all sharq">
+            <div class="grid row">
+                <div class="col-12 all sharq">
                     <div class="box">
                         <div class="img-box">
                             <img src="rooms/sharq_8_100000.jpg" alt="">
                         </div>
                         <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 8 - Sharq<br><span style="font-size: smaller">(for 8 persons)</span>
-                                    <br><strong>
-                                    100.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn5">Book</button>
-                            </div>
+                            <strong style="font-size: 12px">Miting room 8 persons</strong><br>
+                            <strong>100.000 sum/hour</strong>
                         </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="shm8">Book
+                        </button>
                     </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all sharq">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/sharq_10_140000.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 10 - Sharq<br><span style="font-size: smaller">(for 10 persons)</span>
-                                    <br><strong>
-                                    140.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn6">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all sharq">
                     <div class="box">
                         <div class="img-box">
                             <img src="rooms/sharq_16_200000.jpg" alt="">
                         </div>
                         <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 16 - Sharq<br><span style="font-size: smaller">(for 16 persons)</span>
-                                    <br><strong>
-                                    200.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn7">Book</button>
-                            </div>
+                            <strong style="font-size: 12px">Miting room 16 persons</strong><br>
+                            <strong>200.000 sum/hour</strong>
                         </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="shm16">Book
+                        </button>
                     </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all minor">
                     <div class="box">
                         <div class="img-box">
-                            <img src="rooms/minor_10_140000.jpg" alt="">
+                            <img src="rooms/sharq_10_140000.jpg" alt="">
                         </div>
                         <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Miting room 10 - Minor<br><span style="font-size: smaller">(for 10 persons)</span>
-                                    <br><strong>
-                                    140.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn8">Book</button>
-                            </div>
+                            <strong style="font-size: 12px">Miting room 10 persons</strong><br>
+                            <strong>140.000 sum/hour</strong>
                         </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="shm10">Book
+                        </button>
                     </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all minor">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="rooms/minor_event.jpg" alt="">
-                        </div>
-                        <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Event room - Minor<br><span style="font-size: smaller">(for 70 persons)</span>
-                                    <br><strong>
-                                    1.200.000 sum/ 2-hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn9">Book</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-lg-4 all kitob sharq minor">
                     <div class="box">
                         <div class="img-box">
                             <img src="rooms/zoom_room.jpg" alt="">
                         </div>
                         <div class="detail-box d-block justify-content-between">
-                            <div class="options">
-                                <h5 style="margin: 0">
-                                    Zoom room<br><span style="font-size: smaller">(for 1 person)</span>
-                                    <br><strong>
-                                    40.000 sum/hour
-                                </strong>
-                                </h5>
-                                <button class="btn btn-dark" id="btn11">Book</button>
-                            </div>
+                            <strong style="font-size: 12px">Zoom room 1 person</strong><br>
+                            <strong>40.000 sum/hour</strong>
                         </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="shz">Book
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 all kitob">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/kitoblar_miting_6_100000.jpg" alt="">
+                        </div>
+                        <div class="detail-box ">
+                            <strong style="font-size: 12px">Miting room 6 persons</strong><br>
+                            <strong>100.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="km6">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/kitoblar_event.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Event room 60 persons</strong><br>
+                            <strong style="font-size: 12px">1.200.000 sum/2-hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="ke">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/kitoblar_miting_12_200000.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Miting room 12 persons</strong><br>
+                            <strong>200.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="km12">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/kitoblar_miting_10_140000.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Miting room 10 persons</strong><br>
+                            <strong>140.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="km10">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/kitoblar_miting_8_120000.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <strong style="font-size: 12px">Miting room 8 persons</strong>
+                            <br><strong>120.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="km8">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/zoom_room.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Zoom room 1 person</strong><br>
+                            <strong>40.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="kz">Book
+                        </button>
+
+                    </div>
+                </div>
+                <div class="col-12 all minor">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/minor_10_140000.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Miting room 10 persons</strong><br>
+                            <strong>140.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="mm10">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/minor_event.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Event room 70 persons</strong><br>
+                            <strong style="font-size: 12px">1.200.000 sum/ 2-hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="me">Book
+                        </button>
+
+                    </div>
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="rooms/zoom_room.jpg" alt="">
+                        </div>
+                        <div class="detail-box d-block justify-content-between">
+                            <strong style="font-size: 12px">Zoom room 1 person</strong><br>
+                            <strong>40.000 sum/hour</strong>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-toggle="modal"
+                                data-target=".bs-example-modal-lg" id="mz">Book
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -253,38 +255,24 @@
 </section>
 <!-- end main section -->
 
-<!-- footer section -->
 <footer class="footer_section">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 footer-col">
-                <h4>
-                    Open
-                </h4>
-                <p>
-                    24 hours - Everyday
-                </p>
-            </div>
-        </div>
+        <h4>Open</h4>
+        <p>24 hours - Everyday</p>
     </div>
 </footer>
-<!-- footer section -->
 
 <!-- jQery -->
 <script src="js/jquery-3.4.1.min.js"></script>
 <!-- popper js -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
 <!-- bootstrap js -->
 <script src="js/bootstrap.js"></script>
 <!-- isotope js -->
 <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
 <!-- custom js -->
 <script src="js/custom.js"></script>
-<script src="js/app.js"></script>
-
-
 </body>
-
 </html>
