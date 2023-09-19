@@ -1,121 +1,146 @@
 let tg = window.Telegram.WebApp;
 
-tg.expand();
+tg.expand()
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
-let item = "";
+let hour = 1;
+let counter = document.getElementById("counter");
 
-let btn1 = document.getElementById("btn1");
-let btn2 = document.getElementById("btn2");
-let btn3 = document.getElementById("btn3");
-let btn4 = document.getElementById("btn4");
-let btn5 = document.getElementById("btn5");
-let btn6 = document.getElementById("btn6");
-let btn7 = document.getElementById("btn7");
-let btn8 = document.getElementById("btn8");
-
-btn1.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 8 - SHARQ");
-        item = "1";
-        tg.MainButton.show();
-        console.log("Miting room 8 - SHARQ");
+function increment() {
+    if (hour < 23) {
+        hour++;
+        counter.innerHTML = hour;
     }
-});
+}
 
-btn2.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 6 - Kitoblar Olami");
-        item = "2";
-        tg.MainButton.show();
+function decrement() {
+    if (hour > 1) {
+        hour--;
+        counter.innerHTML = hour;
     }
+}
+
+let room = document.getElementById("room");
+let shm8 = document.getElementById("shm8");
+let shm10 = document.getElementById("shm10");
+let shm16 = document.getElementById("shm16");
+let shz = document.getElementById("shz");
+let mm10 = document.getElementById("mm10");
+let mz = document.getElementById("mz");
+let me = document.getElementById("me");
+let km6 = document.getElementById("km6");
+let km8 = document.getElementById("km8");
+let km10 = document.getElementById("km10");
+let km12 = document.getElementById("km12");
+let kz = document.getElementById("kz");
+let ke = document.getElementById("ke");
+let komnata = '';
+let filial = '';
+let roomid = '';
+
+
+shm8.addEventListener('click', function (e) {
+    filial = 3
+    roomid = 17
+    komnata = "Sharq - miting room (8 persons)"
+    room.innerHTML = komnata
+    tg.MainButton.show();
+})
+shm10.addEventListener('click', function (e) {
+    filial = 3
+    roomid = 12
+    komnata = "Sharq - miting room (10 persons)"
+    room.innerHTML = komnata
+})
+shm16.addEventListener('click', function (e) {
+    filial = 3
+    roomid = 11
+
+    komnata = "Sharq - miting room (16 persons)"
+    room.innerHTML = komnata
+})
+shz.addEventListener('click', function (e) {
+    filial = 3
+    roomid = 1
+    komnata = "Sharq - zoom room (1 person)"
+    room.innerHTML = komnata
+})
+mm10.addEventListener('click', function (e) {
+    filial = 5
+    roomid = 12
+    komnata = "Minor - miting room (10 persons)"
+    room.innerHTML = komnata
+})
+mz.addEventListener('click', function (e) {
+    filial = 5
+    roomid = 1
+    komnata = "Minor - zoom room (1 person)"
+    room.innerHTML = komnata
+})
+me.addEventListener('click', function (e) {
+    filial = 5
+    roomid = 5
+    komnata = "Minor - event room (70 persons)"
+    room.innerHTML = komnata
+})
+km6.addEventListener('click', function (e) {
+    filial = 4
+    roomid = 18
+    komnata = "Kitoblar - miting room (6 persons)"
+    room.innerHTML = komnata
+})
+km8.addEventListener('click', function (e) {
+    filial = 4
+    roomid = 17
+    komnata = "Kitoblar - miting room (8 persons)"
+    room.innerHTML = komnata
+})
+km10.addEventListener('click', function (e) {
+    filial = 4
+    roomid = 12
+    komnata = "Kitoblar - miting room (10 persons)"
+    room.innerHTML = komnata
+})
+km12.addEventListener('click', function (e) {
+    filial = 4
+    roomid = 19
+    komnata = "Kitoblar - miting room (12 persons)"
+    room.innerHTML = komnata
+})
+kz.addEventListener('click', function (e) {
+    filial = 4
+    roomid = 1
+    komnata = "Kitoblar - zoom room (1 person)"
+    room.innerHTML = komnata
+})
+ke.addEventListener('click', function (e) {
+    filial = 4
+    roomid = 5
+    komnata = "Kitoblar - event room (60 persons)"
+    room.innerHTML = komnata
+})
+
+let input = document.getElementById("input");
+let submit = document.getElementById("submit");
+
+input.addEventListener("input", function () {
+    localStorage.setItem("data", input.value);
 });
 
-btn3.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 8 - Kitoblar Olami");
-        item = "3";
-        tg.MainButton.show();
-    }
+// if (localStorage.getItem("data")) {
+//     input.value = localStorage.getItem("data");
+// }
+//
+// window.addEventListener("beforeunload", function () {
+//     localStorage.removeItem("data");
+// });
+
+// Telegram.WebApp.onEvent('mainButtonClicked', function () {
+//     tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
+// });
+
+submit.addEventListener("input", function () {
+    tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
 });
-
-btn4.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 10 - Minor");
-        item = "4";
-        tg.MainButton.show();
-    }
-});
-
-btn5.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 10 - Sharq");
-        item = "5";
-        tg.MainButton.show();
-    }
-});
-
-btn6.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 16 - Sharq");
-        item = "6";
-        tg.MainButton.show();
-    }
-});
-
-btn7.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 10 - Kitoblar Olami");
-        item = "7";
-        tg.MainButton.show();
-    }
-});
-
-btn8.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.setText("Miting room 12 - Kitoblar Olami");
-        item = "8";
-        tg.MainButton.show();
-    }
-});
-
-
-Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(item);
-});
-
-
-let usercard = document.getElementById("usercard");
-
-let p = document.createElement("p");
-
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name}`;
-
-usercard.appendChild(p);
-
-
-
-
-
-
-
-
