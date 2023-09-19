@@ -40,7 +40,6 @@ let tg = window.Telegram.WebApp;
 
 tg.expand()
 
-
 hour = 1;
 counter = document.getElementById("counter");
 
@@ -161,21 +160,7 @@ ke.addEventListener('click', function (e) {
 let input = document.getElementById("date");
 let submit = document.getElementById("submit");
 
-// input.addEventListener("input", function () {
-//     localStorage.setItem("data", input.value);
-// });
 
-// if (localStorage.getItem("data")) {
-//     input.value = localStorage.getItem("data");
-// }
-//
-// window.addEventListener("beforeunload", function () {
-//     localStorage.removeItem("data");
-// });
-
-// Telegram.WebApp.onEvent('mainButtonClicked', function () {
-//     tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
-// });
 submit.addEventListener("click", function () {
     tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
 });
