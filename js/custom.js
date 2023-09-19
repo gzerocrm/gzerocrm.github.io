@@ -40,11 +40,9 @@ let tg = window.Telegram.WebApp;
 
 tg.expand()
 
-tg.MainButton.textColor = '#FFFFFF';
-tg.MainButton.color = '#2cab37';
 
-let hour = 1;
-let counter = document.getElementById("counter");
+hour = 1;
+counter = document.getElementById("counter");
 
 function increment() {
     if (hour < 23) {
@@ -160,12 +158,12 @@ ke.addEventListener('click', function (e) {
     room.innerHTML = komnata
 })
 
-let input = document.getElementById("input");
+let input = document.getElementById("date");
 let submit = document.getElementById("submit");
 
-input.addEventListener("input", function () {
-    localStorage.setItem("data", input.value);
-});
+// input.addEventListener("input", function () {
+//     localStorage.setItem("data", input.value);
+// });
 
 // if (localStorage.getItem("data")) {
 //     input.value = localStorage.getItem("data");
@@ -178,7 +176,6 @@ input.addEventListener("input", function () {
 // Telegram.WebApp.onEvent('mainButtonClicked', function () {
 //     tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
 // });
-
-submit.addEventListener("input", function () {
+submit.addEventListener("click", function () {
     tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
 });
