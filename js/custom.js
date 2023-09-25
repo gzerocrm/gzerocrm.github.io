@@ -58,6 +58,7 @@ function decrement() {
 }
 
 let room = document.getElementById("room");
+let roomzoom = document.getElementById("roomzoom");
 let shm8 = document.getElementById("shm8");
 let shm10 = document.getElementById("shm10");
 let shm16 = document.getElementById("shm16");
@@ -81,6 +82,7 @@ shm8.addEventListener('click', function (e) {
     roomid = 17
     komnata = "Sharq - miting room (8 persons)"
     room.innerHTML = komnata
+    tg.MainButton.show();
 })
 shm10.addEventListener('click', function (e) {
     filial = 3
@@ -91,6 +93,7 @@ shm10.addEventListener('click', function (e) {
 shm16.addEventListener('click', function (e) {
     filial = 3
     roomid = 11
+
     komnata = "Sharq - miting room (16 persons)"
     room.innerHTML = komnata
 })
@@ -98,7 +101,7 @@ shz.addEventListener('click', function (e) {
     filial = 3
     roomid = 1
     komnata = "Sharq - zoom room (1 person)"
-    room.innerHTML = komnata
+    roomzoom.innerHTML = komnata
 })
 mm10.addEventListener('click', function (e) {
     filial = 5
@@ -110,7 +113,7 @@ mz.addEventListener('click', function (e) {
     filial = 5
     roomid = 1
     komnata = "Minor - zoom room (1 person)"
-    room.innerHTML = komnata
+    roomzoom.innerHTML = komnata
 })
 me.addEventListener('click', function (e) {
     filial = 5
@@ -146,7 +149,7 @@ kz.addEventListener('click', function (e) {
     filial = 4
     roomid = 1
     komnata = "Kitoblar - zoom room (1 person)"
-    room.innerHTML = komnata
+    roomzoom.innerHTML = komnata
 })
 ke.addEventListener('click', function (e) {
     filial = 4
@@ -158,6 +161,14 @@ ke.addEventListener('click', function (e) {
 let input = document.getElementById("date");
 let submit = document.getElementById("submit");
 
+
+function getSelectedValue() {
+    const selectedRadio = document.querySelector('input[name="rate"]:checked');
+    const selectedValue = selectedRadio ? selectedRadio.value : null;
+    const datezoom = document.getElementById("datezoom");
+    tg.sendData(roomid + "_" + selectedValue + "_" + datezoom.value + "_" + filial);
+
+}
 
 submit.addEventListener("click", function () {
     tg.sendData(roomid + "_" + hour + "_" + input.value + "_" + filial);
