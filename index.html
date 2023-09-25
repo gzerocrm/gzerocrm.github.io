@@ -7,12 +7,11 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Site Metas -->
-    <link rel="shortcut icon" href="images/favicon.png" type="">
     <title> Feane </title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"/>
     <!-- responsive style -->
@@ -20,9 +19,11 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 </head>
-<body class="sub_page" style="background-image: url('rooms/image1.jpg');background-size: cover;touch-action: manipulation">
+<body class="sub_page"
+      style="background-image: url('rooms/image1.jpg');background-size: cover;touch-action: manipulation">
 <!--modal-->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     style="top:10%">
     <div class="modal-dialog modal-lg">
         <div class="modal-content p-2" style="background-color: #131618;opacity: 0.9">
             <div class="modal-header" style="border: none">
@@ -32,18 +33,9 @@
                 </button>
             </div>
             <label class="text-light text-center">Booking start time</label>
-            <input id="date" type="datetime-local" class="form-control" style="display:inline;width: 100%;height: 50px">
-            <!--                <select class="form-control" style="width: 35%;display:inline">-->
-            <!--                    <script>-->
-            <!--                        for (let i = 1; i <= 23; i++) {-->
-            <!--                            const option = document.createElement("option");-->
-            <!--                            option.value = i;-->
-            <!--                            option.textContent = `${i}:00`;-->
-            <!--                            document.querySelector("select").appendChild(option);-->
-            <!--                        }-->
-            <!--                    </script>-->
-            <!--                </select>-->
-            <label class="mt-5 text-center text-light">Booking hours</label>
+            <label for="date"></label>
+            <input id="date" type="datetime-local" class="form-control">
+            <label class="mt-2 text-center text-light">Booking hours</label>
             <div class="d-flex justify-content-between ml-5 mr-5 mb-3">
                 <button class="btn" onclick="decrement()"
                         style="background-color: #F8FAFD;height: 50px;width: 50px;border-radius: 15px">-
@@ -60,6 +52,40 @@
         </div>
     </div>
 </div>
+<div class="modal fade bs-example-modal-lg" id="zoomroom" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" style="top:10%">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content p-2" style="background-color: #131618;opacity: 0.9">
+            <div class="modal-header" style="border: none">
+                <h6 id="roomzoom" style="color:white;font-size: 18px"></h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"
+                                                                                                  style="color: white">&times;</span>
+                </button>
+            </div>
+            <label class="text-light text-center">Booking start time</label>
+            <label for="datezoom"></label>
+            <input id="datezoom" type="datetime-local" class="form-control">
+            <label class="mt-2 text-center text-light">Booking hours</label>
+            <div class='d-flex justify-content-between'>
+                <label>
+                    <input type="radio" class="option-input radio" value='1' name="rate" checked/>
+                    1 hour
+                </label>
+                <label>
+                    <input type="radio" class="option-input radio" value='2' name="rate"/>
+                    2 hours
+                </label>
+                <label>
+                    <input type="radio" class="option-input radio" value='3' name="rate"/>
+                    3 hours
+                </label>
+            </div>
+            <button class="btn btn-success" onclick="getSelectedValue()"
+                    style="height: 50px;font-size: 20px;text-align:center;vertical-align: middle">Submit
+            </button>
+        </div>
+    </div>
+</div>
 <!--modal end-->
 
 <!-- main section -->
@@ -69,7 +95,7 @@
             <img decoding="async" loading="lazy" class="aligncenter wp-image-9854 size-full"
                  src="https://groundzero.uz/wp-content/uploads/2021/04/logo-footer.png" alt="" width="150">
         </div>
-        <div class="justify-content-center">
+        <div class="hstack gap-3">
             <ul class="filters_menu">
                 <li data-filter=".kitob">Kitoblar</li>
                 <li data-filter=".minor">Minor</li>
@@ -124,7 +150,7 @@
                             <strong>40.000 sum/hour</strong>
                         </div>
                         <button type="button" class="btn btn-dark" data-toggle="modal"
-                                data-target=".bs-example-modal-lg" id="shz">Book
+                                data-target="#zoomroom" id="shz">Book
                         </button>
                     </div>
                 </div>
@@ -203,7 +229,7 @@
                             <strong>40.000 sum/hour</strong>
                         </div>
                         <button type="button" class="btn btn-dark" data-toggle="modal"
-                                data-target=".bs-example-modal-lg" id="kz">Book
+                                data-target="#zoomroom" id="kz">Book
                         </button>
 
                     </div>
@@ -244,7 +270,7 @@
                             <strong>40.000 sum/hour</strong>
                         </div>
                         <button type="button" class="btn btn-dark" data-toggle="modal"
-                                data-target=".bs-example-modal-lg" id="mz">Book
+                                data-target="#zoomroom" id="mz">Book
                         </button>
 
                     </div>
@@ -274,6 +300,5 @@
 <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
 <!-- custom js -->
 <script src="js/custom.js"></script>
-
 </body>
 </html>
