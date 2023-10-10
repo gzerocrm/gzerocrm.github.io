@@ -79,81 +79,81 @@ let roomid = '';
 
 shm8.addEventListener('click', function (e) {
     filial = 3
-    roomid = 17
+    roomid = 5
     komnata = "Sharq - miting room (8 persons)"
     room.innerHTML = komnata
     tg.MainButton.show();
 })
 shm10.addEventListener('click', function (e) {
     filial = 3
-    roomid = 12
+    roomid = 4
     komnata = "Sharq - miting room (10 persons)"
     room.innerHTML = komnata
 })
 shm16.addEventListener('click', function (e) {
     filial = 3
-    roomid = 11
+    roomid = 3
 
     komnata = "Sharq - miting room (16 persons)"
     room.innerHTML = komnata
 })
 shz.addEventListener('click', function (e) {
     filial = 3
-    roomid = 1
+    roomid = 8
     komnata = "Sharq - zoom room (1 person)"
     roomzoom.innerHTML = komnata
 })
 mm10.addEventListener('click', function (e) {
     filial = 5
-    roomid = 12
+    roomid = 4
     komnata = "Minor - miting room (10 persons)"
     room.innerHTML = komnata
 })
 mz.addEventListener('click', function (e) {
     filial = 5
-    roomid = 1
+    roomid = 8
     komnata = "Minor - zoom room (1 person)"
     roomzoom.innerHTML = komnata
 })
 me.addEventListener('click', function (e) {
     filial = 5
-    roomid = 5
+    roomid = 2
     komnata = "Minor - event room (70 persons)"
     room.innerHTML = komnata
 })
 km6.addEventListener('click', function (e) {
     filial = 4
-    roomid = 18
+    roomid = 6
     komnata = "Kitoblar - miting room (6 persons)"
     room.innerHTML = komnata
 })
 km8.addEventListener('click', function (e) {
     filial = 4
-    roomid = 17
+    roomid = 5
     komnata = "Kitoblar - miting room (8 persons)"
     room.innerHTML = komnata
 })
 km10.addEventListener('click', function (e) {
     filial = 4
-    roomid = 12
+    roomid = 4
     komnata = "Kitoblar - miting room (10 persons)"
     room.innerHTML = komnata
 })
 km12.addEventListener('click', function (e) {
     filial = 4
-    roomid = 19
+    roomid = 7
     komnata = "Kitoblar - miting room (12 persons)"
     room.innerHTML = komnata
 })
 kz.addEventListener('click', function (e) {
     filial = 4
-    roomid = 1
+    roomid = 8
     komnata = "Kitoblar - zoom room (1 person)"
     roomzoom.innerHTML = komnata
 })
 ke.addEventListener('click', function (e) {
     filial = 4
-    roomid = 5
+    roomid = 2
     komnata = "Kitoblar - event room (60 persons)"
     room.innerHTML = komnata
 })
