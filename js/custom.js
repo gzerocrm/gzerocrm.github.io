@@ -44,7 +44,7 @@ hour = 1;
 counter = document.getElementById("counter");
 
 function increment() {
-    if (hour < 23) {
+    if (hour < 7) {
         hour++;
         counter.innerHTML = hour;
     }
