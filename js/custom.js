@@ -82,7 +82,6 @@ shm8.addEventListener('click', function (e) {
     roomid = 5
     komnata = "Sharq - miting room (8 persons)"
     room.innerHTML = komnata
-    tg.MainButton.show();
 })
 shm10.addEventListener('click', function (e) {
     filial = 3
